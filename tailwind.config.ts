@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import unsplash from 'tailwindcss-unsplash'
+// import unsplash from 'tailwindcss-unsplash'
 
 const config: Config = {
   content: ['./src/app/**/*.{ts,tsx}'],
@@ -64,10 +64,10 @@ const config: Config = {
       }],
     }
   },
-  plugins: [
-    unsplash({
-      collections: ['wallpaper background patterns']
-    })
-  ]
+  // plugins: [
+  //   unsplash({
+  //     collections: ['wallpaper']
+  //   })
+  // ]
 }
 export default config
