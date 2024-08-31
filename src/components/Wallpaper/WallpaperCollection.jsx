@@ -4,6 +4,7 @@ import WallpaperCard from './WallpaperCard'
 import CardDetails from '../CardDetails'
 
 const WallpaperCollection = () => {
+  const [showDetails, setShowDetails] = useState([])
   const [imageUrls, setImageUrls] = useState([])
   const [metaData, setMetaData] = useState({
     type: [],
@@ -52,46 +53,49 @@ const WallpaperCollection = () => {
           description: imageDetails.map((detail) => detail.description),
           downloadUrl: imageDetails.map((detail) => detail.downloadUrl),
         })
+        setShowDetails(new Array(imageDetails.length).fill(false))
       } catch (error) {
         console.error("Error fetching images from Unsplash:", error)
       }
     }
 
     fetchImg()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const handleFlip = (index) => {
+    setShowDetails((prevShowDetails) =>
+      prevShowDetails.map((show, i) => (i === index ? !show : show))
+    )
+  }
+
   return (
-    <>
-      <div className='overflow-x-scroll flex gap-4 p-4 scroll-smooth'>
-      {metaData.type.length > 0 ? (
-        metaData.type.map((value, index) =>  (
-          <div key={index} className="flex-none w-[300px]">
-            <CardDetails
-              key={index}
-              type={value}
-              alt={metaData.description[index]}
-              downloadUrl={metaData.downloadUrl[index]}
-            />
-          </div>
-        ))
-      ) : (
-        <p className='text-white'>Loading...</p>
-      )}
-      </div>
-{/* 
-      <div className="overflow-x-scroll flex gap-4 p-4 scroll-smooth ml-[120px]">
+    <div className="overflow-x-scroll flex gap-4 p-4 scroll-smooth ml-[80px]">
         {imageUrls.length > 0 ? (
           imageUrls.map((url, index) => (
-            <div key={index} className="flex-none w-[300px]">
-              <WallpaperCard key={index} imageUrl={url} />
-            </div>
-          ))
-        ) : (
-          <p className='text-white'>Loading...</p>
+            <div
+              key={index}
+              className="flex-none w-[300px]"
+              onClick={() => handleFlip(index)}
+            >
+              {showDetails[index] ? (
+                <CardDetails
+                key={index}
+                type={metaData.type[index]}
+                alt={metaData.description[index]}
+                downloadUrl={metaData.downloadUrl[index]}
+              />
+              ):(
+                <WallpaperCard key={index} imageUrl={url} />
+              )}
+              </div>    
+            ))
+          ) : (
+            <p className='text-white'>Loading...</p>
         )}
-      </div> */}
-    </>
-  )
-}
+      </div>
+
+      )
+      }
 
 export default WallpaperCollection

@@ -10,8 +10,8 @@ const config: Config = {
       clay: '#36344B',
       lavender: '#8682B1',
       smokey: '#6F6D8A',
-      royal: '#6F4CFF 0%, #432E99 100%',
-      funky: '#FF00A8 0%, #00E0FF 100%',
+      // royal: '#6F4CFF 0%, #432E99 100%',
+      // funky: '#FF00A8 0%, #00E0FF 100%',
       },
       fontSize: {
         'display-lg': ['64px', {

@@ -1,6 +1,5 @@
 "use client"
 import WallpaperCollection from './Wallpaper/WallpaperCollection'
-import CardDetails from './CardDetails'
 
 
 const ProductContainer = () => {
@@ -10,4 +9,5 @@ const ProductContainer = () => {
     </div>
   )
 }
+
 export default ProductContainer
