@@ -5,6 +5,7 @@
 Run `pnpm install` to install the dependencies, then `pnpm dev` to start the dev server at `http://localhost:3000`.
 
 ---
+<img width="800" alt="desktop-phone" src="https://github.com/user-attachments/assets/2ccaf0ee-8547-4747-b68a-63d8eb555dd3">
 
-<img width="700" alt="desktop2" src="https://github.com/user-attachments/assets/0dc94b4a-aafb-4a04-9079-7f26f386a3ef"> 
 
+<img width="800" alt="desktop-watch" src="https://github.com/user-attachments/assets/9d0366ed-458f-4e11-9cfa-0ab37a02cb7c">
