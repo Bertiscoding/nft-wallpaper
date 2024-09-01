@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import WallpaperCard from './WallpaperCard'
 import CardDetails from '../CardDetails'
 
-const WallpaperCollection = () => {
+const WallpaperCollection = (props) => {
+  const { watchView } = props
   const [showDetails, setShowDetails] = useState([])
   const [imageUrls, setImageUrls] = useState([])
   const [metaData, setMetaData] = useState({
@@ -70,12 +71,12 @@ const WallpaperCollection = () => {
   }
 
   return (
-    <div className="overflow-x-scroll flex gap-4 scroll-smooth" style={{width: "calc(100vw - 96px)"}}>
+    <div className="overflow-x-scroll flex gap-4 scroll-smooth mb-20 w-[inherit]">
         {imageUrls.length > 0 ? (
           imageUrls.map((url, index) => (
             <div
               key={index}
-              className="flex-none w-[300px]"
+              className={`flex-none ${watchView ? 'w-[210px]' : 'w-[300px]'}`}
               onClick={() => handleFlip(index)}
             >
               {showDetails[index] ? (
@@ -84,9 +85,10 @@ const WallpaperCollection = () => {
                 type={metaData.type[index]}
                 alt={metaData.description[index]}
                 downloadUrl={metaData.downloadUrl[index]}
+                watchView={watchView}
               />
               ):(
-                <WallpaperCard key={index} imageUrl={url} />
+                <WallpaperCard key={index} imageUrl={url} watchView={watchView}/>
               )}
               </div>    
             ))

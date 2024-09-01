@@ -15,7 +15,7 @@ const ProductContainer = () => {
       <div className="flex flex-col w-full">
 
         <div className="pt-11">
-          <div className="relative p-[1px] bg-gradient-to-r from-[#FF00A8] to-[#00E0FF] rounded-[30px] w-[244px]">
+          <div className="relative p-[1px] bg-gradient-funky rounded-[30px] w-[244px]">
             <div className="flex items-center justify-center bg-midnight rounded-[30px] w-[242px] h-[40px]">
               <p className="text-center text-white body-sm">Introducing NFT Wallpapers</p>
             </div>
@@ -67,7 +67,7 @@ const ProductContainer = () => {
         </label>
 
       </div>
-      <WallpaperCollection />
+      <WallpaperCollection watchView={watchView}/>
     </>
   )
 }

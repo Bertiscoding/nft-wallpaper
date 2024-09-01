@@ -16,6 +16,12 @@ const config: Config = {
       lavender: '#8682B1',
       smokey: '#6F6D8A',
       },
+      backgroundImage: {
+        'gradient-royal': 'linear-gradient(180deg, #7E5FFD 0%, #5B45B3 100%)',
+        'gradient-royal-light': 'linear-gradient(180deg, #7E5FFD 0%, #5B45B3 100%)',
+        'gradient-royal-dark': 'linear-gradient(180deg, #6F4CFF 0%, #432E99 100%)',
+        'gradient-funky': 'linear-gradient(180deg, #FF00A8 0%, #00E0FF 100%)',
+      },
       fontSize: {
         'display-lg': ['64px', {
           lineHeight: '72px',
