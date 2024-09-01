@@ -70,7 +70,7 @@ const WallpaperCollection = () => {
   }
 
   return (
-    <div className="overflow-x-scroll flex gap-4 p-4 scroll-smooth ml-[80px]">
+    <div className="overflow-x-scroll flex gap-4 scroll-smooth" style={{width: "calc(100vw - 96px)"}}>
         {imageUrls.length > 0 ? (
           imageUrls.map((url, index) => (
             <div
