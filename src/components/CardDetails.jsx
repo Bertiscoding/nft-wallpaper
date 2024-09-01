@@ -53,4 +53,5 @@ const CardDetails = (props) => {
     </div>
   )
 }
+
 export default CardDetails

@@ -71,7 +71,7 @@ const WallpaperCollection = (props) => {
   }
 
   return (
-    <div className="overflow-x-scroll flex gap-4 scroll-smooth mb-20 w-[inherit]">
+    <div className="overflow-x-scroll flex gap-4 scroll-smooth mb-20 w-[inherit] mx-[6vw]">
         {imageUrls.length > 0 ? (
           imageUrls.map((url, index) => (
             <div
