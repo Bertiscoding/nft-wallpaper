@@ -43,7 +43,7 @@ const CardDetails = (props) => {
               </div>
             )}
 
-            <button className="text-caption-lg text-white bg-gradient-royal focus:border-white active:text-smokey hover:bg-gradient-royal-light disabled:bg-gradient-royal-dark w-[205px] h-10 rounded flex justify-center items-center rounded-lg hover:cursor-pointer"
+            <button className="text-caption-lg text-white bg-gradient-royal focus:border-white active:text-smokey hover:bg-gradient-royal-light disabled:bg-gradient-royal-dark w-[205px] h-10 flex justify-center items-center rounded-lg hover:cursor-pointer" // normally I'd create a separate, reusable component for all form elements like buttons and switch-toggles
               onClick={()=>{handleDownload(downloadUrl)}}
             >
             Download

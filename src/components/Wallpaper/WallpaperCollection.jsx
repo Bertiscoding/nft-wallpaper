@@ -23,7 +23,8 @@ const WallpaperCollection = (props) => {
           console.error("Unsplash access key is not defined.")
           return
         }
-
+        // I've used the Unsplash-API instead of 'tailwindcss-unsplash', because that package turned out to bebuggy and unreliable. 
+        // But the positive side effect here is less dependencies and vulnerabilities.
         const res = await fetch( 
           `https://api.unsplash.com/collections/${collectionId}/photos?per_page=11`,
           {
@@ -46,7 +47,7 @@ const WallpaperCollection = (props) => {
           description: img.alt_description,
           downloadUrl: img.links.download
         }))
-
+        // in a "real" project I would've added lazy loading for this images, considering the size and amount of hidden elements on load.
         setImageUrls(imageDetails.map((detail) => detail.url))
         setMetaData({
           ...metaData,
@@ -88,16 +89,16 @@ const WallpaperCollection = (props) => {
                 watchView={watchView}
               />
               ):(
-                <WallpaperCard key={index} imageUrl={url} watchView={watchView}/>
+                <WallpaperCard key={index} imageUrl={url} watchView={watchView}/> // this is very close to prop-drilling. Without time constraint, useContext would've been the choice
               )}
               </div>    
             ))
           ) : (
             <p className='text-white'>Loading...</p>
         )}
-      </div>
+    </div>
 
-      )
-      }
+  )
+}
 
 export default WallpaperCollection

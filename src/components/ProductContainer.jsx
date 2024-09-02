@@ -32,7 +32,7 @@ const ProductContainer = () => {
               onChange={handleWatchViewChange}
               className="sr-only"
             />
-            <div className="block h-10 w-[340px] md:w-[138px] rounded-full border border-clay bg-steel flex items-center justify-between px-1">
+            <div className="h-10 w-[340px] md:w-[138px] rounded-full border border-clay bg-steel flex items-center justify-between px-1">
               <span
                 className={`w-1/2 text-center text-caption-md transition duration-300 ${
                   watchView ? "text-lavender hover:text-white" : "text-steel"
